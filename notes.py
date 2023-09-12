@@ -6,10 +6,12 @@
 
 # str
 y = "I love Computer Science!"
-
+print(y)
 # numbers
 mynum = 47
+# int
 anothernum = 47.7
+# float
 print(type(mynum))
 print(type(anothernum))
 
@@ -23,7 +25,6 @@ print(lane_tech.reverse())
 print(lane_tech)
 z = lane_tech.pop()
 print(z)
-
 
 # Indices
 print(lane_tech[1])

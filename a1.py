@@ -18,14 +18,18 @@ from typing import List, TypeVar
 def absolute(n: int) -> int:
     """Gives the absolute value of the passed in number. Cannot use the built in
     function `abs`.
-
+    
     Args:
         n - the number to take the absolute value of
 
     Returns:
         the absolute value of the passed in number
     """
-    raise NotImplementedError("absolute")
+    if n < 0:
+        return -n
+    return n
+    raise absolute(1) == 1
+    raise absolute(-3) == 3
 
 
 def factorial(n: int) -> int:
@@ -38,7 +42,13 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
-    raise NotImplementedError("factorial")
+    result = 1
+    counter = 1
+    while counter < (n + 1):
+        result *= counter
+        counter += 1
+    return result
+
 
 
 T = TypeVar("T")
@@ -55,6 +65,8 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
+    lst2 = lst[::2]
+    return lst2
     raise NotImplementedError("every_other")
 
 
@@ -68,8 +80,12 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
-    raise NotImplementedError("sum_list")
-
+    sum = 0
+    for i in lst:
+        sum += i
+    return sum
+bruh2 = [1,5,6,9,10]
+assert sum_list(bruh2) == 31, "this ain't workin"
 
 def mean(lst: List[int]) -> float:
     """Takes a list of numbers, and returns the mean of the numbers.
@@ -80,7 +96,11 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    raise NotImplementedError("mean")
+    sum = 0
+    for i in lst:
+        sum += i
+    return (sum / len(lst))
+    
 
 
 def median(lst: List[int]) -> float:
@@ -95,7 +115,15 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    raise NotImplementedError("median")
+    ez = len(lst)
+    if (ez % 2 != 0):
+        median = lst[ez // 2]
+    else:
+        m1 = lst[(ez // 2) - 1]
+        m2 = lst[ez // 2]
+        median = (m1 + m2) / 2.0
+    return median
+
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -117,6 +145,16 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
+    while len(lst) > 2:
+        for i in range(0,3):
+            for k in lst:
+                if(i == 2):
+                    del k
+    return lst
+        
+
+
+
     raise NotImplementedError("duck_duck_goose")
 
 
